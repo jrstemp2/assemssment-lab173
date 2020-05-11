@@ -5,9 +5,9 @@ export interface FamousPeople {
         innovation: string;
         year: number;
     }
-    tiny: {
-        name: string;
-        invented: string;
-        year: number;
-    }
+    // tiny: {
+    //     name: string;
+    //     invented: string;
+    //     year: number;
+    //}
 }

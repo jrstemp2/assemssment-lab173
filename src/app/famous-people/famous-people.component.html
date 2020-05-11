@@ -1,14 +1,38 @@
+
+<ng-container *ngFor="let p of people, addPer(p)"></ng-container>
+<button (click)="addFormShow()">Add Person:</button>
+<div [hidden]="!showAddForm">
+    <p>Hello</p>
+    <label>First Name: </label><input type="text" [(ngModel)]="newFirstName" />
+    <br />
+    <label>Last Name: </label><input type="text" [(ngModel)]="newLastName" />
+    <br />
+    <label>Innovation: </label><input type="text" [(ngModel)]="newInnovation" />
+    <br />
+    <label>Year: </label><input type="text" [(ngModel)]="newYear" />
+    <br />
+    <button (click)="addPerson()">Submit Person</button>
+
+</div> 
 <sprk-accordion >
+    
     <sprk-accordion-item title="{{f.firstName}} {{f.lastName}}" additionalClasses="accHeading"
         additionalHeadingClasses="accHeading" idString="accordion-item-1"
-        analyticsString="object.action.event" *ngFor="let f of famousPeople?.complete" class="accHeading">
+        analyticsString="object.action.event" *ngFor="let f of people?.complete" class="accHeading">
         <h3>
             <strong style="color:#d60000">Innovation:</strong> {{f.innovation}} 
-           
+
         </h3>
         <h3>
         <strong style="color:#d60000">Year:</strong> {{f.year}}
         </h3>
+        <button>Edit Me</button>
     </sprk-accordion-item>
-
 </sprk-accordion>
+
+
+
+<!--This is the add a person form. Make it hidden until clicked-->
+
+
+<!-- <p *ngFor="let p of people?.complete">{{p.firstName}}</p> -->
